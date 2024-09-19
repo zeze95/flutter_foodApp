@@ -45,7 +45,7 @@ class RestaurantModel {
   Map<String, dynamic> toJson() => _$RestaurantModelToJson(this);
 
 // 파트 로 만들어야할 g.dart파일 이름을 정해놓고
-// flutter pub run build_runnder build 명령어를 입력하여
+// flutter pub run build_runner build 명령어를 입력하여
 // g.dart 파일을 생성함 하여 해당 팩토리 부분이 넘어가있음
   // factory RestaurantModel.fromJson({required Map<String, dynamic> json}){
   //   return RestaurantModel(

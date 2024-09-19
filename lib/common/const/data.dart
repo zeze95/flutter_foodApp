@@ -11,4 +11,8 @@ const REFRESH_TOKEN_KEY = 'REFRESH_TOKEN';
 
 final emulatorIP = '10.0.2.2:3000'; // 안드로이드
 final simulatorIP = '127.0.0.1:3000'; // ios
+final localhost = 'http://localhost:8080';
+
+// final ip = localhost;
 final ip = Platform.isIOS ? simulatorIP : emulatorIP;
+final device = Platform.isIOS ? 'I' : 'A';

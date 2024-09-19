@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+
+before_script:
+  - apt-get update -y
+  - apt-get install maven -y
+
+build:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS clean compile
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  script:
+    - mvn $MAVEN_CLI_OPTS deploy
+  only:
+    - tags
